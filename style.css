@@ -1,10 +1,16 @@
 :root {
-    --bg-color: #ffe6e6; /* Soft pink */
-    --card-bg: #fff5f5; /* Creamy white */
-    --text-color: #5c3a3a; /* Dark warm brown */
-    --primary-color: #ff8fa3; /* Popup pink */
-    --secondary-color: #ffb3c1; /* Lighter pink */
-    --accent-color: #ff4d6d; /* Reddish pink */
+    --bg-color: #ffe6e6;
+    /* Soft pink */
+    --card-bg: #fff5f5;
+    /* Creamy white */
+    --text-color: #5c3a3a;
+    /* Dark warm brown */
+    --primary-color: #ff8fa3;
+    /* Popup pink */
+    --secondary-color: #ffb3c1;
+    /* Lighter pink */
+    --accent-color: #ff4d6d;
+    /* Reddish pink */
     --chaos-rotation: 2deg;
 }
 
@@ -18,7 +24,8 @@ body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow: hidden; /* Prevent scroll */
+    overflow: hidden;
+    /* Prevent scroll */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -38,10 +45,23 @@ body {
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.5; }
-    90% { opacity: 0.5; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 .main-container {
@@ -81,8 +101,10 @@ p {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    position: relative; /* Identify positioning context */
-    min-height: 60px; /* Space for buttons */
+    position: relative;
+    /* Identify positioning context */
+    min-height: 60px;
+    /* Space for buttons */
 }
 
 button {
@@ -110,11 +132,25 @@ button:active {
 
 /* Animations */
 @keyframes shake {
-    0% { transform: translateX(0) rotate(var(--chaos-rotation)); }
-    25% { transform: translateX(-10px) rotate(calc(var(--chaos-rotation) - 2deg)); }
-    50% { transform: translateX(10px) rotate(calc(var(--chaos-rotation) + 2deg)); }
-    75% { transform: translateX(-10px) rotate(calc(var(--chaos-rotation) - 2deg)); }
-    100% { transform: translateX(0) rotate(var(--chaos-rotation)); }
+    0% {
+        transform: translateX(0) rotate(var(--chaos-rotation));
+    }
+
+    25% {
+        transform: translateX(-10px) rotate(calc(var(--chaos-rotation) - 2deg));
+    }
+
+    50% {
+        transform: translateX(10px) rotate(calc(var(--chaos-rotation) + 2deg));
+    }
+
+    75% {
+        transform: translateX(-10px) rotate(calc(var(--chaos-rotation) - 2deg));
+    }
+
+    100% {
+        transform: translateX(0) rotate(var(--chaos-rotation));
+    }
 }
 
 .shake {
@@ -127,13 +163,46 @@ button:active {
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 .moving-btn {
-    position: absolute; /* This allows it to move freely within the relative container or viewport context */
-    transition: top 0.2s ease, left 0.2s ease; /* Smooth movement but fast */
+    position: absolute;
+    /* This allows it to move freely within the relative container or viewport context */
+    transition: top 0.2s ease, left 0.2s ease;
+    /* Smooth movement but fast */
     z-index: 100;
+}
+
+/* Grid for 4-option questions */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Letter Styles */
+.letter-content {
+    text-align: left;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-height: 60vh;
+    overflow-y: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    border: 2px dashed var(--primary-color);
+}
+
+.letter-content h2 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 /* Utilities */
@@ -150,13 +219,34 @@ button:active {
 }
 
 @keyframes popAndFly {
-    0% { transform: scale(0) translate(0, 0); opacity: 1; }
-    100% { transform: scale(1.5) translate(var(--tx), var(--ty)); opacity: 0; }
+    0% {
+        transform: scale(0) translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5) translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
 }
 
 /* Media Queries */
 @media (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    .card { padding: 30px 20px; }
-    button { padding: 12px 24px; font-size: 1rem; }
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .buttons-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens for better readability */
+    }
 }
