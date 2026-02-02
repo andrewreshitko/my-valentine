@@ -1,4 +1,4 @@
-# very-chaotic-cute-quest ❤️
+# Cute Quest
 
 A single-page, personalized Valentine's Day "Love Quest" for **Irina**.  
 Built with pure HTML, CSS, and Vanilla JavaScript. Zero frameworks, 100% chaos (Love Level 4).
@@ -34,6 +34,3 @@ To make the "No" button move faster or slower, edit `script.js` in the `initMovi
 
 ### 3. Edit Questions
 All text and steps are stored in the `steps` array in `script.js`. You can add, remove, or modify steps easily.
-
----
-*Happy Valentine's Day!* 💖
